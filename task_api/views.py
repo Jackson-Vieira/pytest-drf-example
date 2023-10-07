@@ -8,6 +8,17 @@ import math
 from datetime import datetime
 
 
+"""
+get() – The get() handler will return an individual task based on the PRIMARY KEY (pk) 
+specified in the GET request.
+patch() – The patch() handler will update the record in the database 
+for that pk based on new content from the payload. Note- you only need to specify the field you want to 
+update and you cannot update the ID or timestamp fields. 
+Bad requests return a 400_BAD_REQUEST error while tasks not found return a 404_NOT_FOUND .
+delete() — The delete() handler will delete the record in the database for that pk if it exists. If it doesn’t exist, it will return a 404_NOT_FOUND HTTP error response code.
+"""
+
+
 class TasksView(generics.GenericAPIView):
     serializer_class = TaskSerializer
     queryset = TaskModel.objects.all()
@@ -55,7 +66,7 @@ class TasksView(generics.GenericAPIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-class TaskDetail(generics.GenericAPIView):  
+class TaskDetailView(generics.GenericAPIView):  
     queryset = TaskModel.objects.all()  
     serializer_class = TaskSerializer
 
