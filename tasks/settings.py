@@ -35,7 +35,7 @@ INTERNAL_APPS = [
 ]
 
 EXTERNAL_APPS = [
-    'corsheaders'
+    "corsheaders",
     "rest_framework"
 ]
 
