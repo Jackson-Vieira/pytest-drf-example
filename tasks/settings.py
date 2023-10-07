@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+INTERNAL_APPS = [
+    "task_api",
+    "rest_framework"
+]
+
+INSTALLED_APPS += INSTALLED_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
